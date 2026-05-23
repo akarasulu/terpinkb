@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terpinkb"
+version = "0.1.0"
+description = "A randomized on-screen secret keyboard modal for Textual applications"
+readme = "Readme.md"
+requires-python = ">=3.11"
+keywords = ["textual", "terminal", "pin", "secret", "keyboard", "hsm", "pkcs11"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Framework :: Pytest",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Terminals",
+  "Typing :: Typed",
+]
+dependencies = [
+  "textual>=0.86",
+]
+
+[project.urls]
+Homepage = "https://github.com/akarasulu/terpinkb"
+Repository = "https://github.com/akarasulu/terpinkb"
+Issues = "https://github.com/akarasulu/terpinkb/issues"
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "pytest",
+  "pytest-asyncio",
+  "pytest-cov",
+  "ruff",
+  "twine",
+  "mypy",
+]
+
+[tool.setuptools.package-data]
+terpinkb = ["css/*.tcss", "py.typed"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "--cov=terpinkb --cov-report=term-missing --cov-fail-under=90"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["terpinkb"]
+
+[tool.coverage.run]
+branch = true
+source = ["terpinkb"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

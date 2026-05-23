@@ -1,0 +1,55 @@
+RandomizedPinModal {
+    align: center middle;
+}
+
+#pin-dialog {
+    width: 76;
+    height: auto;
+    max-width: 100%;
+    border: round $accent;
+    background: $surface;
+    padding: 1 2;
+}
+
+#pin-title {
+    text-style: bold;
+    content-align: center middle;
+    margin-bottom: 1;
+}
+
+#pin-display {
+    height: 3;
+    content-align: center middle;
+    border: round $primary;
+    margin-bottom: 1;
+    text-style: bold;
+}
+
+#pin-strength {
+    height: 1;
+    content-align: center middle;
+    margin-bottom: 1;
+}
+
+#pin-keypad {
+    grid-size: 10;
+    grid-gutter: 1 1;
+    height: auto;
+    margin-bottom: 1;
+}
+
+#pin-modifiers,
+#pin-actions {
+    grid-size: 5;
+    grid-gutter: 1 1;
+    height: auto;
+    margin-top: 1;
+}
+
+.pin-key {
+    width: 5;
+}
+
+.pin-control {
+    min-width: 8;
+}
